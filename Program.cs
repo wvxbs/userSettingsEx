@@ -1,6 +1,5 @@
 ﻿using System;
 using userSettingsEx.src;
-using System.Configuration;
 
 namespace userSettingsEx
 {
@@ -11,11 +10,6 @@ namespace userSettingsEx
             chooseExercise();
         }
 
-        public static void getConfigurationFileData()
-        {
-            var title = ConfigurationManager.AppSettings["title"];
-        }
-
         public static void chooseExercise()
         {
             int Select = 0;
@@ -23,13 +17,13 @@ namespace userSettingsEx
 
             while(Run)
             {
-                Console.WriteLine("\n1 para 1\n2 para 2\n3 para 3\n\n0 para sair");
+                Console.WriteLine("\n1 rodar jogo\n0 para sair");
                 if(int.TryParse(Console.ReadLine(), out Select))
                 {
                     switch(Select)
                     {
                         case 1:
-                            Ex1 e1 = new Ex1(ConsoleColor.Green);
+                            Ex1 e1 = new Ex1();
                         break;
                         case 2:
                         break;
