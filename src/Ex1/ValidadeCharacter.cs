@@ -3,11 +3,13 @@ using System.Configuration;
 
 namespace userSettingsEx.src
 {
-    class Ex1
+    class ValidadeCharacter
     {
-        public Ex1 ()
+        public ValidadeCharacter ()
         {
 
         } 
+
+
     }
 }
