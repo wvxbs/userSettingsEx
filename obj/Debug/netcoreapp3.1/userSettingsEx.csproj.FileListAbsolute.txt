@@ -1,0 +1,13 @@
+C:\Users\GabrielFerreira\Documents\repos\userSettingsEx\obj\Debug\netcoreapp3.1\userSettingsEx.csprojAssemblyReference.cache
+C:\Users\GabrielFerreira\Documents\repos\userSettingsEx\obj\Debug\netcoreapp3.1\userSettingsEx.AssemblyInfoInputs.cache
+C:\Users\GabrielFerreira\Documents\repos\userSettingsEx\obj\Debug\netcoreapp3.1\userSettingsEx.AssemblyInfo.cs
+C:\Users\GabrielFerreira\Documents\repos\userSettingsEx\obj\Debug\netcoreapp3.1\userSettingsEx.csproj.CoreCompileInputs.cache
+C:\Users\GabrielFerreira\Documents\repos\userSettingsEx\bin\Debug\netcoreapp3.1\userSettingsEx.exe
+C:\Users\GabrielFerreira\Documents\repos\userSettingsEx\bin\Debug\netcoreapp3.1\userSettingsEx.deps.json
+C:\Users\GabrielFerreira\Documents\repos\userSettingsEx\bin\Debug\netcoreapp3.1\userSettingsEx.runtimeconfig.json
+C:\Users\GabrielFerreira\Documents\repos\userSettingsEx\bin\Debug\netcoreapp3.1\userSettingsEx.runtimeconfig.dev.json
+C:\Users\GabrielFerreira\Documents\repos\userSettingsEx\bin\Debug\netcoreapp3.1\userSettingsEx.dll
+C:\Users\GabrielFerreira\Documents\repos\userSettingsEx\bin\Debug\netcoreapp3.1\userSettingsEx.pdb
+C:\Users\GabrielFerreira\Documents\repos\userSettingsEx\obj\Debug\netcoreapp3.1\userSettingsEx.dll
+C:\Users\GabrielFerreira\Documents\repos\userSettingsEx\obj\Debug\netcoreapp3.1\userSettingsEx.pdb
+C:\Users\GabrielFerreira\Documents\repos\userSettingsEx\obj\Debug\netcoreapp3.1\userSettingsEx.genruntimeconfig.cache
