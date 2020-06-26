@@ -24,13 +24,14 @@ namespace userSettingsEx.src
 
         private void retrieveDataFromFile ()
         {
-              StreamReader sw = new StreamReader(@"src\Ex1\text.txt");
-
-              string Str = sw.ReadToEnd();
-
-              foreach (var i in Str.ToCharArray())
+              using(StreamReader sw = new StreamReader(@"src\Ex1\text.txt"))
               {
-                  List.Add(i.ToString());
+                string Str = sw.ReadToEnd();
+
+                foreach (var i in Str.Split("\n"))
+                {
+                    List.Add(i.ToString());
+                }
               }
         }
     }

@@ -6,87 +6,111 @@ namespace userSettingsEx.src
     class Game
     {
         private string Word = "";
-        private List<string> Result = new List<string>(); 
+        private int Attempt = 7;
+        private List<char> Letters = new List<char>();
+        private List<string> CorrectWord = new List<string>();
+        private List<string> Result = new List<string>();
 
         public Game (string _Word)
         {
             Word = _Word;
+            Console.WriteLine(_Word);
+
+            int i = 1;
+
+            while(i < Word.Length)
+            {
+                Result.Add("_");
+
+                i++;
+            }
+
             Clock();
         }
 
         private void Clock ()
         {
-            for(int i = 0; i < 7; i++)
+            while(Attempt > 0)
             {
                 getUserInput();
+                Console.WriteLine($"Letras digitadas {new String(Letters.ToArray())}");
+                Console.WriteLine(String.Join(" ",Result));
+            }
+
+            if(isCorrect())
+            {
+                Console.WriteLine($"Parabéns!!!!!!!!!!!!!!!!!!!!! você ganhou!!!!!!!!!!!!!!!!!!!!!!!!!! a palavra é:{String.Join("", Result)}!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+            }
+            else
+            {
+                Console.WriteLine("Voce gastou todas as tentativas \n\n\t:^{");
+            }
+        }
+
+        private void getUserInput ()
+        {
+            bool Run = true;
+
+            while(Run)
+            {
                 if(isCorrect())
                 {
-                    Console.WriteLine($"Palavra correta! {listToString()}");
+                    Attempt = 0;
+                    Run = false;
+                }
+                Console.WriteLine("Insira a letra");
+                char Temp = Console.ReadKey().KeyChar;
+
+                if(Char.IsLetter(Temp))
+                {
+                    Letters.Add(Temp);
+                    if(Word.Contains(Temp))
+                    {
+                        wordState(Temp);
+                    } 
+                    else 
+                    if(isRepeated(Temp))
+                    {
+                        Console.WriteLine("Caractere repetido >:^{");
+                        Attempt = Attempt;
+                    }
+                    else
+                    Attempt = Attempt -1;
+                    Run = false;
                 }
                 else
-                Console.WriteLine($"Letras descobertas: {listToString()}");
+                Console.WriteLine("Caractere inválido");
+            }
+        }
+
+        private void wordState(char c)
+        {
+            int Position  = Word.IndexOf(c.ToString());
+
+            while(Position != -1)
+            {
+                Result[Position] = c.ToString();
+
+                Position = Word.IndexOf(c.ToString(), Position +1);
             }
         }
 
         private bool isCorrect()
         {
-            foreach (var i in Word)
-            {
-                foreach (var j in Result)
-                {
-                    if(i.ToString() == j)
-                    {
-                        return true;
-                    }
-
-                    return false;
-                }
-                return false;
-            }
-            return false;
-        }
-
-        private void getUserInput ()
-        {
-            Console.WriteLine("Insira a letra");
-            string temp = Console.ReadLine();
-
-            if(temp.Length == 1)
-            {
-                processString(temp);
-            }
+            if(Word.Contains(String.Join("",Result)))
+                return true;
             else
-            Console.WriteLine("Insira apenas uma letra");
+                return false;
         }
 
-        private int wordSize(string str)
+        private bool isRepeated(char c)
         {
-            return str.ToCharArray().Length;
-        }
-
-        private void processString(string str)
-        {
-            var Temp = Word.ToCharArray();
-
-            foreach (char i in Temp)
+            if(String.Join("", Letters).Contains(c))
             {
-                if(i == str.ToCharArray()[0])
-                {
-                    Result.Add(i.ToString());
-                }
-            }
-        }
-
-        private string listToString()
-        {
-            string Str = "";
-
-            foreach (var i in Result)
-            {
-                Str = Str + i;
+                return true;
             }
 
-            return Str;
+            return false;
         }
     }
 }

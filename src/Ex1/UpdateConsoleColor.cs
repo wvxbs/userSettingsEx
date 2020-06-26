@@ -16,6 +16,13 @@ namespace userSettingsEx.src
             Console.ForegroundColor = mcf.getFileForegroundColor();
         }
 
+        public void UpdateFromTxt()
+        {
+            manipulateTxtConfigurationFile mcf = new manipulateTxtConfigurationFile();
+            Console.BackgroundColor = mcf.retrieveDataFromFile(0);
+            Console.ForegroundColor = mcf.retrieveDataFromFile(1);
+        }
+
         public void InsertNewColors(string backgroundColor, string foregroundColor)
         {
             ManipulateConfigurationFile mcf = new ManipulateConfigurationFile();
@@ -26,6 +33,15 @@ namespace userSettingsEx.src
             UpdateConsoleColor c = new UpdateConsoleColor();
 
             Update();
+        }
+
+        public void InsertNewColorsToTxt(string backgroundColor, string foregroundColor)
+        {
+            manipulateTxtConfigurationFile mcf = new manipulateTxtConfigurationFile();
+
+            mcf.writeDataToFile(backgroundColor, foregroundColor);
+
+            UpdateFromTxt();
         }
     }
 }
