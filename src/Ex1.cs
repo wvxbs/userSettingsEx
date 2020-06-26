@@ -7,7 +7,8 @@ namespace userSettingsEx.src
     {
         public Ex1 ()
         {
-
+            var Pick = new pickRandomWordFromTextFile();
+            Game g = new Game(Pick.Pick());
         } 
     }
 }
